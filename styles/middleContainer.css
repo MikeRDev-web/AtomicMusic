@@ -1,0 +1,14 @@
+.middleContainer {
+    margin: 10px auto;
+    width: 50%;
+    height: max-content;
+    background-color: var(--color5);
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.middleContainer__contend {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}

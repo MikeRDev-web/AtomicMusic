@@ -1,0 +1,48 @@
+.lateralBar {
+    position: fixed;
+    top: 75px;
+    left: 0.5rem;
+    background-color: var(--color5);
+    height: 87%;
+    width: 21%;
+    text-align: center;
+    border-radius: 1rem 1px 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+    border: 2px solid var(--color3);
+    z-index: 4;
+    transform: translateX(-25rem);
+    box-shadow: 0px 0px 1rem transparent;
+    animation: lateralBar 1s 2;
+}
+
+@keyframes lateralBar {
+    0% {
+        transform: translateX(-25rem);
+    }
+    50% {
+        transform: translateX(-24rem);
+    }
+    100% {
+        transform: translateX(-25rem);
+    }
+}
+
+
+.lateralBar__btn {
+    position: absolute;
+    top: -2px;
+    width: 5%;
+    height: 105px;
+    left: 99.1%;
+    background-color: var(--color5);
+    border-radius: 0 0.6rem 0.6rem 0;
+    cursor: pointer;
+    border: 2px solid var(--color3);
+    border-left: none;
+    z-index: 3;
+    padding-right: 0.3rem;
+}

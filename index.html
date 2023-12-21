@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="icon" href="/src/images/logotypes/logoicon.webp">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="/styles/lateralBar.css">
+    <link rel="stylesheet" href="/styles/favoriteList.css">
+    <link rel="stylesheet" href="/styles/player.css">
+    <link rel="stylesheet" href="/styles/searchResults.css">
+    <link rel="stylesheet" href="/styles/bigContainer.css">
+    <link rel="stylesheet" href="/styles/middleContainer.css">
+    <link rel="stylesheet" href="/styles/songCard.css">
+    <link rel="stylesheet" href="/styles/modalContainer.css">
+    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/banner.css">
+    <link rel="stylesheet" href="/styles/artistCard.css">
+    <link rel="stylesheet" href="/styles/artistModal.css">
+    <link rel="stylesheet" href="/styles/playList.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <title>Atomic Music</title>
+</head>
+
+<body>
+    <header id="header">
+        <span class="spanHeader">
+            <div>
+                <img src="/src/images/logotypes/logoicon.webp" alt="logo" class="header__logo">
+                <input type="text" placeholder="¿Que deseas escuhcar hoy?" class="header__input" id="seekerInput">
+                <div class="searchResultsContainer" id="resultsContainer">
+                    
+                </div>
+            </div>
+            <nav class="header__nav" id="headerNav">
+                <a href="/index.html" class="header__nav--a">Inicio</a>
+                <a href="#" class="header__nav--a" id="atomicRadio">
+                    AtomicRadio 
+                </a>
+                <a href="#" class="header__nav--a" onclick="insertInModal('login', 'modalContainer')" id="loginBtnInHeader">Login</a>
+            </nav>
+        </span>
+    </header>
+    <div class="modalContainer" id="modalContainer">
+       
+        
+    </div>
+    <section class="lateralBar" id="lateralBar">
+        <img src="/src/images/icons/arrowOpen.svg" alt="open/close" class="lateralBar__btn" id="lateralBarCloseOpenBtn">
+        <div class="favorite__title">
+            <img src="/src/images/icons/favoriteIconOn.svg" alt="favoritos" class="favorite__title--img">
+            <p class="favorite__title--p">Favoritos</p>
+        </div>
+        <div class="favorite">
+            <nav class="favorite__list">
+                <div class="favorite__list-noLoginMessage" id="favoriteMessage">
+                    <p class="favorite__list-noLoginMessage-p">Inicia sesion para agregar canciones a tus favoritos</p>
+                    <button class="favorite__list-noLoginMessage-btn" onclick="insertInModal('login', 'modalContainer')">Login</button>
+                </div>
+                <ul>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="player">
+            <div class="player__title">
+                <img src="/src/images/icons/playerIcon.svg" alt="reporductor" class="player__title--img">
+                <p class="player__title--p">Reproductor</p>
+            </div>
+            <div class="player__content" id="player">
+                <img src="/src/images/icons/empyPlayer.svg" alt="empyPlayer" class="player__content--cover">
+                <div class="player__info">
+                    <h2 class="player__info--name">No hay nada reproduciéndose</h2>
+                    <p class="player__info--artist">Lo que reproduzcas aparecerá aquí</p>
+                </div>
+                <div class="player__progressbar">
+                    <div class="progressbar"></div>
+                </div>
+                <div class="player__controls">
+                    <img src="/src/images/icons/play.svg" alt="play" class="player__controls--btn">
+                    <div class="volumControls">
+                        <input type="range" class="player__controls--input">
+                        <img src="/src/images/icons/volumeIcon1.svg" alt="volumen" class="player__controls--vol-icon">
+                    </div>
+                    <a href="#" class="player__controls--btn-donate">
+                        Donar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <section class="bigContainer">
+            <h1 class="bigContainer__title">Top semanal</h1>
+            <span class="bigContainer__contend">
+    
+                <div class="songCard">
+                    <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                    <span class="songCard__content">
+                        <img src="/src/images/covers/blnko182.webp" alt="cover" class="songCard__cover">
+                        <div class="songCard__info">
+                            <h3 class="songCard__info-name">A Escondidas de Sus Papás</h3>
+                            <p class="songCard__info-artist">Blnko</p>
+                        </div>
+                        <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="7" onclick="playSong(this)">
+                    </span>
+                </div>
+    
+                <div class="songCard">
+                    <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                    <span class="songCard__content">
+                        <img src="/src/images/covers/Notion.webp" alt="cover" class="songCard__cover">
+                        <div class="songCard__info">
+                            <h3 class="songCard__info-name">Notion</h3>
+                            <p class="songCard__info-artist">Tash Sultana</p>
+                        </div>
+                        <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="1" onclick="playSong(this)">
+                    </span>
+                </div>
+    
+                <div class="songCard">
+                    <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                    <span class="songCard__content">
+                        <img src="/src/images/covers/XXXTENTACION.webp" alt="cover" class="songCard__cover">
+                        <div class="songCard__info">
+                            <h3 class="songCard__info-name">Jocelyn Flores</h3>
+                            <p class="songCard__info-artist">XXXTENTACION</p>
+                        </div>
+                        <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="2" onclick="playSong(this)">
+                    </span>
+                </div>
+
+                <div class="songCard">
+                    <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                    <span class="songCard__content">
+                        <img src="/src/images/covers/GoodbyeAndGoodRiddanceAlbumCover.webp" alt="cover" class="songCard__cover">
+                        <div class="songCard__info">
+                            <h3 class="songCard__info-name">All Girls Are The Same</h3>
+                            <p class="songCard__info-artist">Juice Wrld</p>
+                        </div>
+                        <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="33" onclick="playSong(this)">
+                    </span>
+                </div>
+
+                <div class="songCard">
+                    <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                    <span class="songCard__content">
+                        <img src="/src/images/covers/cry.webp" alt="cover" class="songCard__cover">
+                        <div class="songCard__info">
+                            <h3 class="songCard__info-name">Don't Let Me Go</h3>
+                            <p class="songCard__info-artist">Cigarettes After Sex</p>
+                        </div>
+                        <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="34" onclick="playSong(this)">
+                    </span>
+                </div>
+
+                <div class="songCard">
+                    <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                    <span class="songCard__content">
+                        <img src="/src/images/covers/starShoping.webp" alt="cover" class="songCard__cover">
+                        <div class="songCard__info">
+                            <h3 class="songCard__info-name">Star Shopping</h3>
+                            <p class="songCard__info-artist">Lil Peep</p>
+                        </div>
+                        <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="23" onclick="playSong(this)">
+                    </span>
+                </div>
+            </span>
+        </section>
+        <div class="doubleSection">
+            <section class="middleContainer">
+                <h1 class="bigContainer__title">Mas escuchadas</h1>
+                <span class="middleContainer__contend">
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/mars.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">The Kill</h3>
+                                <p class="songCard__info-artist">30 Seconds To Mars</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="18" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/TheBetterLife.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">Here Without You</h3>
+                                <p class="songCard__info-artist">3 Doors Down</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="19" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/es-and-my-melancholic-future-sadness.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">DRIVE HER MAD</h3>
+                                <p class="songCard__info-artist">Bloo Lip</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="36" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/ecstacy.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">ecstacy slowed</h3>
+                                <p class="songCard__info-artist">SUICIDAL-IDOL</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="35" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/paso-a-culiacan.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">Paso En Culiacan</h3>
+                                <p class="songCard__info-artist">Junior H, Natanael Cano</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="37" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/juice-wrld-legends-never-die.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">Wishing Well</h3>
+                                <p class="songCard__info-artist">Juice WRLD</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="38" onclick="playSong(this)">
+                        </span>
+                    </div>
+                </span>
+            </section>
+    
+            <section class="middleContainer">
+                <h1 class="bigContainer__title">Recomendaciones para ti</h1>
+                <span class="middleContainer__contend">
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/alba.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">La Célula No Explotó</h3>
+                                <p class="songCard__info-artist">José Madero</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="16" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/ticketsToMyDownfall.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">bloody valentine acoustic</h3>
+                                <p class="songCard__info-artist">Machine Gun Kelly</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="17" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/angelXxxTentacion.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">Angel [Versión Extendida]</h3>
+                                <p class="songCard__info-artist">XXXTENTACION</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="40" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/circles.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">Good News</h3>
+                                <p class="songCard__info-artist">Mac Miller</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="22" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/allHopeIsGone.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">Snuff</h3>
+                                <p class="songCard__info-artist">Slipknot</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="32" onclick="playSong(this)">
+                        </span>
+                    </div>
+                    <div class="songCard">
+                        <img src="/src/images/icons/favoriteIconOff.svg" alt="favorito" class="songCard__favorite-btn">
+                        <span class="songCard__content">
+                            <img src="/src/images/covers/sanLucas.webp" alt="cover" class="songCard__cover">
+                            <div class="songCard__info">
+                                <h3 class="songCard__info-name">Abrazado a Ti</h3>
+                                <p class="songCard__info-artist">Kevin Kaarl</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="songCard__play-btn" data-song-attribute="25" onclick="playSong(this)">
+                        </span>
+                    </div>
+                </span>
+            </section>
+        </div>
+
+        <section class="bigContainer">
+            <h1 class="bigContainer__title">Artistas top del momento</h1>
+            <span class="bigContainer__contend">
+                <div class="artistCard" data-artist="Lil Peep" onclick="showArtist('modalContainer', this.dataset.artist)">
+                    <img src="/src/images/artist/lil_peep.webp" alt="artist photo" class="artistCard__img">
+                    <p class="artistCard__name">Lil Peep</p>
+                </div>
+
+                <div class="artistCard" data-artist="José Madero" onclick="showArtist('modalContainer', this.dataset.artist)">
+                    <img src="/src/images/artist/jose_madero.webp" alt="artist photo" class="artistCard__img">
+                    <p class="artistCard__name">José Madero</p>
+                </div>
+
+                
+                <div class="artistCard" data-artist="XXXTENTACION" onclick="showArtist('modalContainer', this.dataset.artist)">
+                    <img src="/src/images/artist/xxxtentacion.webp" alt="artist photo" class="artistCard__img">
+                    <p class="artistCard__name">XXXTENTACION</p>
+                </div>
+
+                <div class="artistCard" data-artist="Juice WRLD" onclick="showArtist('modalContainer', this.dataset.artist)">
+                    <img src="/src/images/artist/juice-wrld.webp" alt="artist photo" class="artistCard__img">
+                    <p class="artistCard__name">Juice WRLD</p>
+                </div>
+            </span>
+        </section>
+
+        <section class="playListContainer" id="playListContainer">
+            <h2 class="playListContainer__title">Playlist relevantes</h2>
+            <span class="playListContainer__contend">
+                <div class="playList">
+                    <div class="playList__info">
+                        <img src="/src/images/playListCover/sadMix.jpeg" alt="playListCover" class="playList__info--img">
+                        <h3 class="playList__info--title">Sad Mix 2023</h3>
+                        <img src="/src/images/icons/arrowOpen.svg" alt="" class="playList__info--openBtn" id="openSadMix" onclick="openClosePL('openSadMix', 'sadMixContent')">
+                    </div>
+                    
+                    <ul class="playList__ul" id="sadMixContent">
+                        <li class="playList__li">
+                            <img src="/src/images/covers/angelXxxTentacion.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Angel [Versión Extendida]</h3>
+                                <p class="playList__li-songInfo-artist">XXXTENTACION</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="40" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/starShoping.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Star Shopping</h3>
+                                <p class="playList__li-songInfo-artist">Lil Peep</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="23" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/perdon.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Perdón (Acústica)</h3>
+                                <p class="playList__li-songInfo-artist">Anthrés</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="26" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/solista...peroNoSolo.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Tu Con El</h3>
+                                <p class="playList__li-songInfo-artist">Frankie Ruiz</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="28" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/allHopeIsGone.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Snuff</h3>
+                                <p class="playList__li-songInfo-artist">Slipknot</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="32" onclick="playSong(this)">
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="playList">
+                    <div class="playList__info">
+                        <img src="/src/images/playListCover/nostalgic.jpeg" alt="playListCover" class="playList__info--img">
+                        <h3 class="playList__info--title">Nostalgia</h3>
+                        <img src="/src/images/icons/arrowOpen.svg" alt="" class="playList__info--openBtn" id="openNostalgia" onclick="openClosePL('openNostalgia', 'nostalgiaContent')">
+                    </div>
+                    
+                    <ul class="playList__ul" id="nostalgiaContent">
+                        <li class="playList__li">
+                            <img src="/src/images/covers/cry.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Don't Let Me Go</h3>
+                                <p class="playList__li-songInfo-artist">Cigarettes After Sex</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="34" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/es-and-my-melancholic-future-sadness.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">DRIVE HER MAD</h3>
+                                <p class="playList__li-songInfo-artist">Bloo Lip</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="36" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/juice-wrld-legends-never-die.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Righteous</h3>
+                                <p class="playList__li-songInfo-artist">Juice WRLD</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="39" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/Amantes_Sunt_Amentes.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Los Malaventurados No Lloran</h3>
+                                <p class="playList__li-songInfo-artist">PXNDX</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="9" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/lovely.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Lovely</h3>
+                                <p class="playList__li-songInfo-artist">Billie Eilish, Khalid</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="12" onclick="playSong(this)">
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="playList">
+                    <div class="playList__info">
+                        <img src="/src/images/playListCover/trap.jpeg" alt="playListCover" class="playList__info--img">
+                        <h3 class="playList__info--title">Trap</h3>
+                        <img src="/src/images/icons/arrowOpen.svg" alt="" class="playList__info--openBtn" id="openTrap" onclick="openClosePL('openTrap', 'trapContent')">
+                    </div>
+                    
+                    <ul class="playList__ul" id="trapContent">
+                        <li class="playList__li">
+                            <img src="/src/images/covers/angelXxxTentacion.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Angel [Versión Extendida]</h3>
+                                <p class="playList__li-songInfo-artist">XXXTENTACION</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="40" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/XXXTENTACION2.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">the remedy for a broken heart</h3>
+                                <p class="playList__li-songInfo-artist">XXXTENTACION</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="24" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/XXXTENTACION.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Jocelyn Flores</h3>
+                                <p class="playList__li-songInfo-artist">XXXTENTACION</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="40" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/fiveDegrees.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Five degrees</h3>
+                                <p class="playList__li-songInfo-artist">Lil Peep</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="41" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/juice-wrld-legends-never-die.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Wishing Well</h3>
+                                <p class="playList__li-songInfo-artist">Juice WRLD</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="38" onclick="playSong(this)">
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="playList">
+                    <div class="playList__info">
+                        <img src="/src/images/playListCover/mexicoPlayList.jpeg" alt="playListCover" class="playList__info--img">
+                        <h3 class="playList__info--title">Top en Mexico</h3>
+                        <img src="/src/images/icons/arrowOpen.svg" alt="" class="playList__info--openBtn" id="openTopEnMexico" onclick="openClosePL('openTopEnMexico', 'topEnMexicoContent')">
+
+                    </div>
+                    
+                    <ul class="playList__ul" id="topEnMexicoContent">
+                        <li class="playList__li">
+                            <img src="/src/images/covers/paso-a-culiacan.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Paso En Culiacan</h3>
+                                <p class="playList__li-songInfo-artist">Junior H, Natanael Cano</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="37" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/AhoraMasQueNunca.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Virgen</h3>
+                                <p class="playList__li-songInfo-artist">Los Adolescentes Orquesta</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="31" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/atrevidoYDiferente.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Que Locura Enamorarme De Ti</h3>
+                                <p class="playList__li-songInfo-artist">Eddie Santiago</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="30" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/sexSimbol.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">La Noche Mas Linda</h3>
+                                <p class="playList__li-songInfo-artist">Adalberto Santiago</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="29" onclick="playSong(this)">
+                        </li>
+                        <li class="playList__li">
+                            <img src="/src/images/covers/drakula.webp" class="playList__li-cover">
+                            <div class="playList__li-songInfo">
+                                <h3 class="playList__li-songInfo-songName">Drakula</h3>
+                                <p class="playList__li-songInfo-artist">Blnko</p>
+                            </div>
+                            <img src="/src/images/icons/play.svg" alt="play" class="playList__li-songInfo-btn" data-song-attribute="11" onclick="playSong(this)">
+                        </li>
+                    </ul>
+                </div>
+            </span>
+        </section>
+
+        <section class="banner">
+            <img src="/src/images/gif/atomicMembersbackgroud.gif" alt="backgroundBanner" class="banner__background">
+            <span class="banner__info">
+                <h1 class="banner__title">¿Te gustaría ser parte de Atomic Members?</h1>
+                <a href="./pages/atomicMembers.html" class="banner__btn" target="_blank">Conoce como</a>
+            </span>
+        </section>
+    </main>
+    <footer>
+        <span class="footer__content">
+            <div class="footer__info">
+                <img src="/src/images/logotypes/logoicon.webp" alt="logo" class="footer__logo">
+                <h4 class="footer__text">Atomic Music ©</h4>
+            </div>
+            <div class="footer__opt">
+                <a href="#" class="footer__opt-a">Soporte</a>
+                <a href="#" class="footer__opt-a">Aviso de privacidad</a>
+                <a href="#" class="footer__opt-a">Contactanos</a>
+            </div>
+            <div class="socialMedia">
+                <a href="#" class="socialMedia__a">
+                    <img src="/src/images/icons/facebookIcon.svg" alt="facebook" class="socialMedia__a-icon">
+                </a>
+                <a href="#" class="socialMedia__a">
+                    <img src="/src/images/icons/InstagramIcon.svg" alt="instagram" class="socialMedia__a-icon">
+                </a>
+                <a href="#" class="socialMedia__a">
+                    <img src="/src/images/icons/twitterIcon.svg" alt="x" class="socialMedia__a-icon">
+                </a>
+            </div>
+        </span>
+    </footer>
+
+    <script src="/js/lateralBar.js" type="module"></script>
+    <script src="/js/seeker.js" type="module"></script>
+    <script src="./js/player.js" type="module"></script>
+    <script src="/js/modalTypes.js"></script>
+    <script defer src="/js/artistModal.js" type="module"></script>
+    <script src="/js/playList.js"></script>
+</body>
+
+</html>

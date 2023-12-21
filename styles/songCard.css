@@ -1,0 +1,83 @@
+.songCard {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color2);
+    width: 160px;
+    max-width: 160px;
+    height: 250px;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+}
+
+.songCard:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--myBoxShadow);
+}
+
+.songCard__content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.songCard__favorite-btn {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color5);
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.songCard__favorite-btn:active {
+    transform: scale(0.9);
+}
+
+.songCard__cover {
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
+    border-radius: 30px;
+}
+
+.songCard__info {
+    width: 100%;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    margin: 0 auto 0 1rem;
+}
+
+.songCard__info-name {
+    font-size: 15px;
+}
+
+.songCard__info-artist {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.songCard__play-btn {
+    width: 3rem;
+    background-color: var(--color5);
+    border-radius: 1rem;
+    margin-right: -170px;
+    cursor: pointer;
+}
+
+.songCard__play-btn:active {
+    transform: scale(0.9);
+}
+
